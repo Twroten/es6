@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 参数默认值
+        function add(a, b) {
+            b = b || 1;
+            return a + b;
+        }
+        console.log(add(10));
+
+        // 参数默认值优化
+        function add_1(a, b = 10) {
+            return a + b;
+        }
+        console.log(add_1(10));
+
+        // 可变参数
+        function fun(...values) {
+            console.log(values.length)
+        }
+        fun();
+        fun(1);
+        fun(1, 2);
+        fun(1, 2, 3);
+
+        var print = obj => console.log(obj);
+        print("hello");
+
+        var sum = function (a, b) {
+            return a + b;
+        }
+        console.log(sum(0.1, 0.2));
+
+        var sum_1 = (a, b) => a + b;
+        console.log(sum_1(0.1, 0.2));
+
+        var sum_2 = (a, b) => {
+            c = a + b;
+            return a + c;
+        }
+        console.log(sum_2(0.1, 0.2));
+
+        const person = {
+            name: "wall",
+            age: 23,
+            language: ["Java", "JS", "CSS"]
+        }
+
+        // 结构+箭头函数
+        var hello = ({ name }) => console.log("hello," + name);
+        hello(person);
+
+    </script>
+</body>
+
+</html>

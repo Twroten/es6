@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const person = {
+            name: "wall",
+            age: 23,
+            language: ["Java", "JS", "CSS"]
+        }
+        console.log(Object.keys(person));
+        console.log(Object.values(person));
+        console.log(Object.entries(person));
+
+        var target = { a: 1 };
+        var source_1 = { b: 2 };
+        var source_2 = { c: 3 };
+
+        Object.assign(target, source_1, source_2);
+        console.log(target);
+
+        // 声明对象简写
+        const name = "张三";
+        const age = 24;
+        var person_1 = { name: name, age: age };
+
+        var person_2 = { name, age };
+        console.log(person_1);
+        console.log(person_2);
+
+        let person_3 = {
+            name: "John",
+            eat: function (food) { console.log(this.name + "在吃" + food) },
+            // 箭头函数不能使用this
+            eat_1: food => { console.log(person_3.name + "在吃" + food) },
+            eat_2(food) {
+                console.log(person_3.name + "在吃" + food);
+            }
+        }
+        person_3.eat("Apple");
+        person_3.eat_1("Peach");
+        person_3.eat_2("Orage");
+
+        // 对象拷贝
+        let p1 = { name: "Amy", age: 21 };
+        let someone = { ...p1 };
+        console.log(someone);
+
+        // 合并对象
+        let age_1 = { age: 22 };
+        let name_1 = { anme: "wall" };
+        let p2 = { age: 21 };
+
+        p2 = { ...name_1, ...age_1, };
+        console.log(p2);
+
+    </script>
+
+
+</body>
+
+</html>
